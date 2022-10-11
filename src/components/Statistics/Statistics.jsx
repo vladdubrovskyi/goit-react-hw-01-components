@@ -36,3 +36,4 @@ Statistics.propTypes = {
     })
   ),
 };
+
