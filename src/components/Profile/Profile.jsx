@@ -1,33 +1,38 @@
-import {ProfileBox } from "./Profile.styled"
-
+import {ProfileBox, UserDescriptionBox, UserDescriptionText, UserLocationText, StatsBox } from "./Profile.styled"
+import PropTypes from 'prop-types';
 
 export const Profile = ({ user: { username, tag, location, avatar, stats } }) => {
   return (
-   <div>
-  <div>
+   <ProfileBox>
+  <UserDescriptionBox>
     <img
-      src={avatar}
+      src={avatar} 
       alt="User avatar"
+      className="avatar"
     />
-    <p>{username}</p>
-    <p>{tag}</p>
-    <p>{location}</p>
-  </div>
+    <UserDescriptionText>{username}</UserDescriptionText>
+    <UserDescriptionText>{tag}</UserDescriptionText>
+    <UserLocationText>{location}</UserLocationText>
+  </UserDescriptionBox>
 
-  <ul>
+  <StatsBox>
     <li>
-      <span>Followers</span>
+      <span>Followers </span>
       <span>{stats.followers}</span>
     </li>
     <li>
-      <span>Views</span>
+      <span>Views </span>
       <span>{ stats.views}</span>
     </li>
     <li>
-      <span>Likes</span>
+      <span>Likes </span>
     <span>{stats.likes }</span>
     </li>
-  </ul>
-</div>
+  </StatsBox>
+</ProfileBox>
   );
 };
+
+
+Profile.PropTypes =
+{username : PropTypes.string}
