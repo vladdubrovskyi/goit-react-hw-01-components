@@ -8,7 +8,7 @@ import {
   Th,
   Td,
 } from "components/TransactionHistory/TransactionHistory.styled"
-import transactions from "components/transactions"
+
 
 export const TransactionHistory = ({transactions }) => {
     return (<TransactionTable>
