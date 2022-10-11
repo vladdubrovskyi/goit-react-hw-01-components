@@ -8,6 +8,7 @@ import {
   Th,
   Td,
 } from "components/TransactionHistory/TransactionHistory.styled"
+import transactions from "components/transactions"
 
 export const TransactionHistory = ({transactions }) => {
     return (<TransactionTable>
@@ -30,3 +31,14 @@ export const TransactionHistory = ({transactions }) => {
       </BodyTable>
     </TransactionTable>)
 }
+
+TransactionHistory.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+    })
+  ),
+};
